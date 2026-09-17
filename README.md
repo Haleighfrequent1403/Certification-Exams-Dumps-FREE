@@ -1,6 +1,6 @@
 # Free Exam Dumps — Questions for Any Certification Exam
 
-Create a clean certification exam PDF from an exam code. Free Exam Dumps collects available practice questions, options, answers, explanations, topics, and diagrams, then formats them for offline study and printing.
+Create a clean certification exam PDF from an exam code. Free Exam Dumps collects available practice questions, options, answers, explanations, and topics, then formats them for offline study and printing.
 
 Built by [Swarnava Dutta](https://swarnava.dev). If this project helps, [star the GitHub repository](https://github.com/swarnava-dutta/Certification-Exams-Dumps-FREE).
 
@@ -10,7 +10,7 @@ Built by [Swarnava Dutta](https://swarnava.dev). If this project helps, [star th
 - Creates an organized A4 exam questions and answers PDF
 - Keeps each question, its options, answer, and explanation together
 - Supports AWS, Microsoft Azure, AI, cloud, security, data, and developer exam codes available in the catalog
-- Resumes interrupted downloads and reuses completed exam data
+- Continues interrupted downloads
 - Shows live progress, speed, elapsed time, and ETA
 
 ## Fork and use
@@ -36,7 +36,7 @@ The finished certification exam PDF is saved here:
 output/<EXAM-CODE>/<EXAM-CODE>.pdf
 ```
 
-The output folder contains only the PDF. Resume files and downloaded diagrams stay in `.cache`.
+The output folder contains only the finished PDF.
 
 ## FAQ
 
@@ -46,7 +46,7 @@ It can create a PDF when the exam code exists in the configured public catalog. 
 
 ### Does the PDF include answers and explanations?
 
-Yes. Available answers, explanations, answer choices, topics, and question diagrams are included.
+Yes. Available answers, explanations, answer choices, and topics are included.
 
 ### Can an interrupted download continue?
 

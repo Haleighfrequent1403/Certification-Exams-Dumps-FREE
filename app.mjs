@@ -38,7 +38,7 @@ function duration(milliseconds) {
 }
 
 function phase(number, label) {
-  return `[${number}/4] ${label.padEnd(9)}`;
+  return `[${number}/3] ${label.padEnd(9)}`;
 }
 
 function fitLine(value) {
@@ -126,12 +126,18 @@ function progress(number, label, current, total, suffix = "", unit = "q") {
 
 function printHeader() {
   if (process.stdout.isTTY) process.stdout.write("\x1b[2J\x1b[H");
-  line(cyan("  +------------------------------------------------------+"));
-  line(cyan("  |                  EXAM PDF MAKER                     |"));
-  line(cyan("  +------------------------------------------------------+"));
-  line(dim("  Public pages only  |  Gentle single-request scraping  |  Resume + cache"));
+  line(cyan("  +================================================================+"));
+  line(cyan("  |  ______ __   __    _    __  __                                |"));
+  line(cyan("  | |  ____|\\ \\ / /   / \\  |  \\/  |                               |"));
+  line(cyan("  | | |__    \\ V /   / _ \\ | |\\/| |                               |"));
+  line(cyan("  | | |____   | |   / ___ \\| |  | |                               |"));
+  line(cyan("  | |______|  |_|  /_/   \\_\\_|  |_|                               |"));
+  line(cyan("  |                    P D F   M A K E R                           |"));
+  line(cyan("  +================================================================+"));
+  line("  Questions  ->  Answers  ->  Polished PDF");
   line(`  ${cyan("Swarnava Dutta")}  |  https://swarnava.dev`);
-  line(`  ${yellow("Star the repo")}  |  https://github.com/swarnava-dutta/Certification-Exams-Dumps-FREE`);
+  line(`  ${yellow("Star the repo")}`);
+  line("  https://github.com/swarnava-dutta/Certification-Exams-Dumps-FREE");
   line();
 }
 
@@ -186,9 +192,7 @@ async function runScraper(code, outputDir, refresh, provider) {
 
   let total = 0;
   let fetched = 0;
-  let imageTotal = 0;
-  let imageDone = 0;
-  let activePhase = phase(1, "Discover");
+  let activePhase = phase(1, "Find exam");
   let fatal = "";
   const child = spawn(process.execPath, args, {
     cwd: ROOT,
@@ -199,16 +203,16 @@ async function runScraper(code, outputDir, refresh, provider) {
 
   const onEvent = (event) => {
     if (!event) return;
-    if (event.event === "discovery_started") spin(`${phase(1, "Discover")} Finding ${code} in the public exam catalog...`);
+    if (event.event === "discovery_started") spin(`${phase(1, "Find exam")} Looking up ${code}...`);
     else if (event.event === "exam_discovered") {
       total = Number(event.questionCount) || total;
-      line(`  ${green("OK")}   ${phase(1, "Discover")} ${event.title ?? event.exam} (${event.providerDisplayName ?? event.provider})`);
+      line(`  ${green("OK")}   ${phase(1, "Find exam")} ${event.title ?? event.exam} (${event.providerDisplayName ?? event.provider})`);
       activePhase = phase(2, "Questions");
-      spin(`${activePhase} Reading exam metadata...`);
+      spin(`${activePhase} Preparing questions...`);
     } else if (event.event === "checkpoint_reused") {
       total = Number(event.questionCount) || total;
       fetched = Number(event.fetched) || 0;
-      line(`  ${green("OK")}   ${phase(1, "Discover")} Resuming ${event.title ?? event.exam}`);
+      line(`  ${green("OK")}   ${phase(1, "Find exam")} ${event.title ?? event.exam}`);
       activePhase = phase(2, "Questions");
       progress(2, "Questions", fetched, total || fetched, "resumed");
     } else if (event.event === "exam_metadata") {
@@ -241,22 +245,14 @@ async function runScraper(code, outputDir, refresh, provider) {
       }
     } else if (event.event === "images_started") {
       line(`  ${green("OK")}   ${phase(2, "Questions")} ${total} questions ready`);
-      imageTotal = Number(event.total) || 0;
-      activePhase = phase(3, "Images");
-      if (imageTotal) progress(3, "Images", 0, imageTotal, "preparing local copies", "img");
-      else line(`  ${green("OK")}   ${activePhase} No question images`);
-    } else if (event.event === "image_progress") {
-      imageDone = Number(event.processed) || imageDone;
-      imageTotal = Number(event.total) || imageTotal;
-      const skipped = Number(event.skipped) || 0;
-      progress(3, "Images", imageDone, imageTotal, `${event.saved} saved, ${event.reused} reused${skipped ? `, ${skipped} skipped` : ""}`, "img");
+      activePhase = phase(2, "Questions");
+      spin(`${activePhase} Finalizing study content...`);
     } else if (event.event === "cache_reused") {
       total = Number(event.questions) || total;
-      line(`  ${green("OK")}   ${phase(1, "Discover")} Complete local cache matched`);
-      line(`  ${green("OK")}   ${phase(2, "Questions")} ${event.questions} questions reused`);
-      line(`  ${green("OK")}   ${phase(3, "Images")} ${Number(event.images) || 0} images reused`);
+      line(`  ${green("OK")}   ${phase(1, "Find exam")} Exam ready`);
+      line(`  ${green("OK")}   ${phase(2, "Questions")} ${event.questions} questions ready`);
     } else if (event.event === "saved") {
-      if (imageTotal) line(`  ${green("OK")}   ${phase(3, "Images")} ${event.images} image${event.images === 1 ? "" : "s"} ready`);
+      clearLive();
     } else if (event.event === "fatal") {
       fatal = event.error ?? "Scraping failed";
     }
@@ -463,7 +459,7 @@ export function buildHtml(data, code) {
   <div class="meta">
     <div><strong>${escapeHtml(data.provider ?? "Unknown")}</strong><br>Provider</div>
     <div><strong>${questions.length}</strong><br>Questions</div>
-    <div><strong>${Number(data.imageCount) || 0}</strong><br>Question images</div>
+    <div><strong>Included</strong><br>Answers &amp; explanations</div>
     <div><strong>${escapeHtml(generated)}</strong><br>PDF generated</div>
   </div>
   <div class="brand">
@@ -578,7 +574,7 @@ async function main() {
   const outputDir = path.join(OUTPUT_ROOT, code);
   await mkdir(cacheDir, { recursive: true });
   await mkdir(outputDir, { recursive: true });
-  line(dim(`  Gentle mode: one request at a time, at least ${REQUEST_DELAY_MS / 1_000}s apart.`));
+  line(`  Gentle mode: one request at a time, at least ${REQUEST_DELAY_MS / 1_000}s apart.`);
   line();
 
   const data = await runScraper(code, cacheDir, args.refresh, args.provider);
@@ -586,18 +582,18 @@ async function main() {
   if (incomplete.length) {
     throw new Error(`Refusing an incomplete PDF: ${incomplete.length} question${incomplete.length === 1 ? " is" : "s are"} missing text or answers.`);
   }
-  spin(`${phase(4, "PDF")} Formatting the A4 study guide...`);
+  spin(`${phase(3, "PDF")} Formatting the A4 study guide...`);
   const htmlPath = path.join(cacheDir, ".print.html");
   const pdfPath = path.join(outputDir, `${safeFilename(code)}.pdf`);
   await writeFile(htmlPath, buildHtml(data, code), "utf8");
   await renderPdf(htmlPath, pdfPath);
   await rm(htmlPath, { force: true });
   await rm(path.join(cacheDir, "checkpoint.json"), { force: true });
-  line(`  ${green("OK")}   ${phase(4, "PDF")} Study guide rendered`);
-  line(`  ${green("DONE")} ${data.questions.length} questions, ${Number(data.imageCount) || 0} images | ${duration(Date.now() - startedAt)}`);
+  line(`  ${green("OK")}   ${phase(3, "PDF")} Study guide rendered`);
+  line(`  ${green("DONE")} ${data.questions.length} questions | ${duration(Date.now() - startedAt)}`);
   line();
   line(`  ${cyan(pdfPath)}`);
-  line(dim("  Run the same exam again to reuse the local cache, or add --refresh to fetch it again."));
+  line("  Your PDF is ready. Open it and start studying.");
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {

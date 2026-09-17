@@ -160,6 +160,7 @@ assert.match(html, /https:\/\/swarnava\.dev/);
 assert.match(html, /github\.com\/swarnava-dutta\/Certification-Exams-Dumps-FREE/);
 assert.match(html, /<time class="created">[^<]+<\/time>/);
 assert.doesNotMatch(html, /PDF created:/);
+assert.doesNotMatch(html, /Question images/);
 assert.match(html, /counter\(page\).*counter\(pages\)/s);
 assert.match(html, /<a class="owner" href="https:\/\/swarnava\.dev">Swarnava Dutta \(https:\/\/swarnava\.dev\)<\/a>/);
 assert.match(html, /\.page-header \{ top: 0;/);
