@@ -1,61 +1,155 @@
-# Certification Exam Questions — Free Exam Dumps PDF
+# Certification Exam Questions — Free Exam Dumps
 
-Certification Exam Questions creates a clean exam PDF from a certification code, with available practice questions, options, answers, explanations, and topics organized for offline study and printing.
+Fetch available practice questions for a certification exam and turn them into a clean A4 PDF with answers, explanations, topics, and images.
 
-Built by [Swarnava Dutta](https://swarnava.dev). If this project helps, [star the GitHub repository](https://github.com/swarnava-dutta/Certification-Exams-Dumps-FREE).
+[![GitHub stars](https://img.shields.io/github/stars/swarnava-dutta/Certification-Exams-Dumps-FREE?style=for-the-badge&logo=github&label=Stars)](https://github.com/swarnava-dutta/Certification-Exams-Dumps-FREE/stargazers)
+[![MIT License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)](LICENSE)
+[![Node.js 20+](https://img.shields.io/badge/Node.js-20%2B-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)](https://nodejs.org/)
 
-## What it does
+If this project saves you time, [give it a star](https://github.com/swarnava-dutta/Certification-Exams-Dumps-FREE). It helps other learners find it.
 
-- Finds the full certification name from an exam code
-- Creates an organized A4 exam questions and answers PDF
-- Keeps each question, its options, answer, and explanation together
-- Supports AWS, Microsoft Azure, AI, cloud, security, data, and developer exam codes available in the catalog
-- Continues interrupted downloads
+## Features
+
+- Finds an exam from its code, such as `AZ-900`, `AI-103`, `AIF-C01`, or `PL-300`
+- Creates a print-ready PDF with questions, answer choices, correct answers, explanations, topics, and available images
+- Keeps each question and its answer together where possible
+- Resumes interrupted downloads instead of starting over
+- Reuses completed downloads for faster repeat runs
 - Shows live progress, speed, elapsed time, and ETA
+- Uses a gentle request rate of one request at a time
+- Requires no npm packages
 
-## Fork and use
+## Quick start on Windows
 
-1. [Open the repository](https://github.com/swarnava-dutta/Certification-Exams-Dumps-FREE) and click **Star**.
-2. Click **Fork** to create your own copy.
-3. Download your fork as a ZIP, or clone it:
+Open PowerShell and run:
 
-   ```powershell
-   git clone https://github.com/YOUR-USERNAME/Certification-Exams-Dumps-FREE.git
-   ```
+```powershell
+git clone https://github.com/swarnava-dutta/Certification-Exams-Dumps-FREE.git
+cd Certification-Exams-Dumps-FREE
+.\start.bat
+```
 
-4. Open the downloaded folder and double-click `start.bat`.
-5. Enter a certification exam code such as `AIF-C01`, `AI-103`, `AZ-900`, or `PL-300`.
+No Git? [Download the ZIP](https://github.com/swarnava-dutta/Certification-Exams-Dumps-FREE/archive/refs/heads/main.zip), extract it, and double-click `start.bat`.
 
-On the first run, `start.bat` quietly installs a missing runtime or PDF browser. Later runs go directly to the exam prompt.
-
-## Find the PDF
-
-The finished certification exam PDF is saved here:
+Enter an exam code when prompted. Your PDF will be saved to:
 
 ```text
 output/<EXAM-CODE>/<EXAM-CODE>.pdf
 ```
 
-The output folder contains only the finished PDF.
+On the first run, `start.bat` checks for Node.js 20+ and Microsoft Edge or Google Chrome. If Node.js or a supported browser is missing, it uses `winget` to install what is needed.
+
+## Run a specific exam
+
+Pass the exam code directly:
+
+```powershell
+.\start.bat AZ-900
+```
+
+If the same code exists under more than one provider, specify the provider:
+
+```powershell
+.\start.bat AIF-C01 --provider amazon
+```
+
+Download the exam again instead of reusing saved data:
+
+```powershell
+.\start.bat AZ-900 --refresh
+```
+
+Show the available options:
+
+```powershell
+.\start.bat --help
+```
+
+| Option | Purpose |
+| --- | --- |
+| `EXAM-CODE` | Exam code to find and download |
+| `--provider SLUG` or `-p SLUG` | Select a provider when a code is ambiguous |
+| `--refresh` | Ignore completed cached data and download again |
+| `--help` or `-h` | Show command help |
+
+## Manual setup
+
+Install these first if `winget` is unavailable:
+
+- [Node.js 20 or newer](https://nodejs.org/)
+- Microsoft Edge or Google Chrome
+
+Then run:
+
+```powershell
+node app.mjs AZ-900
+```
+
+No `npm install` step is required. If the browser is installed in a custom location, set its path for the current PowerShell session:
+
+```powershell
+$env:EXAM_BROWSER_PATH = "C:\Path\To\msedge.exe"
+node app.mjs AZ-900
+```
+
+## How it works
+
+1. Matches the exam code against the configured public catalog.
+2. Downloads the available question pages and images at a controlled rate.
+3. Saves progress under `.cache/` so an interrupted run can continue.
+4. Checks that every question has text and an answer before creating the PDF.
+5. Uses Edge or Chrome in headless mode to render the final A4 document.
+
+Only the finished PDF is placed under `output/`. Working files stay under `.cache/`, and both directories are ignored by Git.
+
+## Run the checks
+
+Run the offline checks:
+
+```powershell
+npm test
+```
+
+Run the PDF rendering check as well:
+
+```powershell
+npm run test:pdf
+```
+
+The PDF check requires Microsoft Edge or Google Chrome.
 
 ## FAQ
 
-### Can it create free exam dumps for any certification exam?
+### Does it support every certification exam?
 
-It can create a PDF when the exam code exists in the configured public catalog. Use `--provider` if the same code belongs to more than one provider.
+It works when the exam code is available in the configured public catalog. Exam availability can change.
 
 ### Does the PDF include answers and explanations?
 
-Yes. Available answers, explanations, answer choices, and topics are included.
+Yes, when they are available in the source. The app refuses to create an incomplete PDF when a question is missing its text or answer.
 
 ### Can an interrupted download continue?
 
-Yes. Enter the same exam code again and the saved checkpoint continues from the last completed question.
+Yes. Run the same exam code again and it resumes from the saved checkpoint.
 
-### Where are the exam questions saved?
+### Where is the PDF saved?
 
-Only the finished PDF appears under `output/<EXAM-CODE>/`. Internal resume data stays outside the output folder.
+The finished file is saved as `output/<EXAM-CODE>/<EXAM-CODE>.pdf`.
+
+### How do I report a problem or request an exam?
+
+[Open a GitHub issue](https://github.com/swarnava-dutta/Certification-Exams-Dumps-FREE/issues) with the exam code, provider, command used, and the error message. Do not include private account or session data.
+
+## Contributing
+
+Bug fixes and focused improvements are welcome. Fork the repository, create a branch, run `npm test`, and open a pull request describing what changed.
+
+## Disclaimer
+
+This project is for personal study. It is not affiliated with or endorsed by any certification provider. Question availability and accuracy can change, so confirm current objectives and policies with the official provider.
 
 ## License
 
-Released under the [MIT License](LICENSE). Use generated questions as study material and confirm current objectives with the certification provider.
+Released under the [MIT License](LICENSE).
+
+Built by [Swarnava Dutta](https://swarnava.dev). If it helped, [star the repository](https://github.com/swarnava-dutta/Certification-Exams-Dumps-FREE) and share it with someone preparing for an exam.
