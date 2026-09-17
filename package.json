@@ -1,0 +1,28 @@
+{
+  "name": "certification-exams-dumps-free",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Create organized certification exam question PDFs with answers and explanations.",
+  "type": "module",
+  "license": "MIT",
+  "author": {
+    "name": "Swarnava Dutta",
+    "url": "https://swarnava.dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/swarnava-dutta/Certification-Exams-Dumps-FREE.git"
+  },
+  "homepage": "https://github.com/swarnava-dutta/Certification-Exams-Dumps-FREE#readme",
+  "bugs": {
+    "url": "https://github.com/swarnava-dutta/Certification-Exams-Dumps-FREE/issues"
+  },
+  "scripts": {
+    "start": "node app.mjs",
+    "test": "node test.mjs",
+    "test:pdf": "node test.mjs --pdf"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
