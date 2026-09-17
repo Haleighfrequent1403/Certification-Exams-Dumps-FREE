@@ -26,7 +26,8 @@ If this project saves you time, [give it a star](https://github.com/swarnava-dut
 
 ## Quick start on Windows
 
-Open PowerShell and run:
+(Recommended)
+Open Command Prompt and run:
 
 ```powershell
 git clone https://github.com/swarnava-dutta/Certification-Exams-Dumps-FREE.git
@@ -127,7 +128,7 @@ The PDF check requires Microsoft Edge or Google Chrome.
 
 ### Does it support every certification exam?
 
-It works when the exam code is available in the configured public catalog. Exam availability can change.
+It works when the exam code is available in the public catalog. Exam availability can change.
 
 ### Does the PDF include answers and explanations?
 
