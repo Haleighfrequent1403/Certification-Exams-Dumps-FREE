@@ -133,8 +133,9 @@ function printHeader() {
   line(cyan(" ▀▄▄▄▀   █ █   ▀▄▄▀█   █     █   █  ▀▄▄▀█    █    ▀▄▄▀█    █    ▀█▄██  ▀█▄▄▀    █"));
   line();
   line(cyan("                         CERTIFICATION EXAM QUESTIONS"));
+  line();
   line(`  ${cyan("Swarnava Dutta")}  |  https://swarnava.dev`);
-  line(`  ${yellow("Star the repo")}`);
+  line(`  ${yellow("Star the repo 🌟")}`);
   line("  https://github.com/swarnava-dutta/Certification-Exams-Dumps-FREE");
   line();
 }
