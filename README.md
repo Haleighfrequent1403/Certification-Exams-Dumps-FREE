@@ -3,6 +3,9 @@
 Fetch available practice questions for a certification exam and turn them into a clean A4 PDF with answers, explanations, topics, and images.
 
 [![GitHub stars](https://img.shields.io/github/stars/swarnava-dutta/Certification-Exams-Dumps-FREE?style=for-the-badge&logo=github&label=Stars)](https://github.com/swarnava-dutta/Certification-Exams-Dumps-FREE/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/swarnava-dutta/Certification-Exams-Dumps-FREE?style=for-the-badge&logo=github&label=Forks)](https://github.com/swarnava-dutta/Certification-Exams-Dumps-FREE/forks)
+[![GitHub issues](https://img.shields.io/github/issues/swarnava-dutta/Certification-Exams-Dumps-FREE?style=for-the-badge&logo=github&label=Issues)](https://github.com/swarnava-dutta/Certification-Exams-Dumps-FREE/issues)
+[![Last commit](https://img.shields.io/github/last-commit/swarnava-dutta/Certification-Exams-Dumps-FREE?style=for-the-badge&logo=github&label=Updated)](https://github.com/swarnava-dutta/Certification-Exams-Dumps-FREE/commits/main)
 [![MIT License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)](LICENSE)
 [![Node.js 20+](https://img.shields.io/badge/Node.js-20%2B-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)](https://nodejs.org/)
 
