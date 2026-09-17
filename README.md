@@ -9,6 +9,8 @@ Fetch available practice questions for a certification exam and turn them into a
 [![MIT License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)](LICENSE)
 [![Node.js 20+](https://img.shields.io/badge/Node.js-20%2B-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)](https://nodejs.org/)
 
+![Certification Exam Questions downloading AI-103 questions in Command Prompt](assets/terminal-demo.png)
+
 If this project saves you time, [give it a star](https://github.com/swarnava-dutta/Certification-Exams-Dumps-FREE). It helps other learners find it.
 
 ## Features
