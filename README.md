@@ -29,6 +29,7 @@ If this project saves you time, [give it a star](https://github.com/swarnava-dut
 ## Quick start on Windows
 
 (Recommended)
+<br />
 Open Command Prompt and run:
 
 ```powershell
@@ -37,8 +38,6 @@ cd Certification-Exams-Dumps-FREE
 .\start.bat
 ```
 
-No Git? [Download the ZIP](https://github.com/swarnava-dutta/Certification-Exams-Dumps-FREE/archive/refs/heads/main.zip), extract it, and double-click `start.bat`.
-
 Enter an exam code when prompted. Your PDF will be saved to:
 
 ```text
@@ -46,6 +45,8 @@ output/<EXAM-CODE>/<EXAM-CODE>.pdf
 ```
 
 On the first run, `start.bat` checks for Node.js 20+ and Microsoft Edge or Google Chrome. If Node.js or a supported browser is missing, it uses `winget` to install what is needed.
+
+No Git? [Download the ZIP](https://github.com/swarnava-dutta/Certification-Exams-Dumps-FREE/archive/refs/heads/main.zip), extract it, and double-click `start.bat`.
 
 ## Run a specific exam
 
