@@ -1,6 +1,6 @@
-# Free Exam Dumps — Questions for Any Certification Exam
+# Certification Exam Questions — Free Exam Dumps PDF
 
-Create a clean certification exam PDF from an exam code. Free Exam Dumps collects available practice questions, options, answers, explanations, and topics, then formats them for offline study and printing.
+Certification Exam Questions creates a clean exam PDF from a certification code, with available practice questions, options, answers, explanations, and topics organized for offline study and printing.
 
 Built by [Swarnava Dutta](https://swarnava.dev). If this project helps, [star the GitHub repository](https://github.com/swarnava-dutta/Certification-Exams-Dumps-FREE).
 

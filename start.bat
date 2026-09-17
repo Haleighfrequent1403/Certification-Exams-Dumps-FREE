@@ -1,6 +1,6 @@
 @echo off
 setlocal EnableExtensions
-title Free Exam Dumps
+title Certification Exam Questions
 cd /d "%~dp0"
 
 set "SETUP_LOG=%TEMP%\free-exam-dumps-setup.log"

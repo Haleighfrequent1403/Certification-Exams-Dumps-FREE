@@ -127,14 +127,10 @@ function progress(number, label, current, total, suffix = "", unit = "q") {
 function printHeader() {
   if (process.stdout.isTTY) process.stdout.write("\x1b[2J\x1b[H");
   line(cyan("  +================================================================+"));
-  line(cyan("  |  ______ __   __    _    __  __                                |"));
-  line(cyan("  | |  ____|\\ \\ / /   / \\  |  \\/  |                               |"));
-  line(cyan("  | | |__    \\ V /   / _ \\ | |\\/| |                               |"));
-  line(cyan("  | | |____   | |   / ___ \\| |  | |                               |"));
-  line(cyan("  | |______|  |_|  /_/   \\_\\_|  |_|                               |"));
-  line(cyan("  |                    P D F   M A K E R                           |"));
+  line(cyan("  |                                                                |"));
+  line(cyan("  |          >>>  CERTIFICATION EXAM QUESTIONS  <<<                |"));
+  line(cyan("  |                                                                |"));
   line(cyan("  +================================================================+"));
-  line("  Questions  ->  Answers  ->  Polished PDF");
   line(`  ${cyan("Swarnava Dutta")}  |  https://swarnava.dev`);
   line(`  ${yellow("Star the repo")}`);
   line("  https://github.com/swarnava-dutta/Certification-Exams-Dumps-FREE");
@@ -453,7 +449,7 @@ export function buildHtml(data, code) {
 </footer>
 <main class="pdf-content">
 <section class="cover">
-  <div class="eyebrow">Exam study guide</div>
+  <div class="eyebrow">Certification Exam Questions</div>
   <h1>${escapeHtml(data.title ?? code)}</h1>
   <div class="code">${escapeHtml(code)}</div>
   <div class="meta">

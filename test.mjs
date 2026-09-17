@@ -150,6 +150,8 @@ const html = buildHtml({
 }, "SAMPLE-1");
 
 assert.match(html, /Sample &amp; Exam/);
+assert.match(html, /Certification Exam Questions/);
+assert.doesNotMatch(html, /Exam study guide|EXAM PDF MAKER|Questions\s+-&gt;\s+Answers/);
 assert.match(html, /What is &lt;safe&gt;\?/);
 assert.match(html, /assets\/q001-1\.png/);
 assert.match(html, /B - Second/);
