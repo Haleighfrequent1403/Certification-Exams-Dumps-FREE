@@ -8,7 +8,8 @@ Fetch available practice questions for a certification exam and turn them into a
 [![Last commit](https://img.shields.io/github/last-commit/swarnava-dutta/Certification-Exams-Dumps-FREE?style=for-the-badge&logo=github&label=Updated)](https://github.com/swarnava-dutta/Certification-Exams-Dumps-FREE/commits/main)
 [![MIT License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)](LICENSE)
 [![Node.js 20+](https://img.shields.io/badge/Node.js-20%2B-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)](https://nodejs.org/)
-[![Buy Me a Coffee](https://img.shields.io/badge/Buy_Me_a_Coffee-Support-FFDD00?style=for-the-badge&logo=buymeacoffee&logoColor=000000)](https://buymeacoffee.com/swarnava)
+
+<a href="https://buymeacoffee.com/swarnava"><img src="assets/buy-me-a-coffee.svg" alt="Buy me a coffee" width="220"></a>
 
 ![Certification Exam Questions downloading AI-103 questions in Command Prompt](assets/terminal-demo.png)
 
