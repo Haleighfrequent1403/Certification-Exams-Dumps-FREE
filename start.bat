@@ -1,5 +1,6 @@
 @echo off
 setlocal EnableExtensions
+chcp 65001 >nul
 title Certification Exam Questions
 cd /d "%~dp0"
 

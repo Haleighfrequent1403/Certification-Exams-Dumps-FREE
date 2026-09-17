@@ -126,11 +126,13 @@ function progress(number, label, current, total, suffix = "", unit = "q") {
 
 function printHeader() {
   if (process.stdout.isTTY) process.stdout.write("\x1b[2J\x1b[H");
-  line(cyan("  +================================================================+"));
-  line(cyan("  |                                                                |"));
-  line(cyan("  |          >>>  CERTIFICATION EXAM QUESTIONS  <<<                |"));
-  line(cyan("  |                                                                |"));
-  line(cyan("  +================================================================+"));
+  line(cyan("                                                                    █"));
+  line(cyan("  ▄▄▄  ▄     ▄  ▄▄▄    ▄ ▄▄  ▄ ▄▄    ▄▄▄   ▄   ▄   ▄▄▄           ▄▄▄█   ▄▄▄   ▄   ▄"));
+  line(cyan(" █   ▀ ▀▄ ▄ ▄▀ ▀   █   █▀  ▀ █▀  █  ▀   █  ▀▄ ▄▀  ▀   █         █▀ ▀█  █▀  █  ▀▄ ▄▀"));
+  line(cyan("  ▀▀▀▄  █▄█▄█  ▄▀▀▀█   █     █   █  ▄▀▀▀█   █▄█   ▄▀▀▀█         █   █  █▀▀▀▀   █▄█"));
+  line(cyan(" ▀▄▄▄▀   █ █   ▀▄▄▀█   █     █   █  ▀▄▄▀█    █    ▀▄▄▀█    █    ▀█▄██  ▀█▄▄▀    █"));
+  line();
+  line(cyan("                         CERTIFICATION EXAM QUESTIONS"));
   line(`  ${cyan("Swarnava Dutta")}  |  https://swarnava.dev`);
   line(`  ${yellow("Star the repo")}`);
   line("  https://github.com/swarnava-dutta/Certification-Exams-Dumps-FREE");
